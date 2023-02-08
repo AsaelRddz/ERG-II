@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ERG-IIApp</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="bienvenido">¡Bienvenido!</string>
+    <string name="registrar_nueva_cuenta">Registrar nueva cuenta</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido_materno">Apellido Materno</string>
+    <string name="apellido_parterno">Apellido Parterno</string>
 </resources>

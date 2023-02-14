@@ -1,10 +1,13 @@
 package com.erg_iiapp.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.erg_iiapp.R
 import com.erg_iiapp.databinding.ActivityLoginBinding
 import com.erg_iiapp.databinding.ActivityRegisterBinding
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegisterBinding
@@ -14,6 +17,28 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        signup();
+    }
 
+    private fun signup() {
+        title = "Registro"
+
+        binding.btnRegister.setOnClickListener {
+            if(binding.etEmail.text!!.isNotEmpty() && binding.etPassword.text!!.isNotEmpty()){
+                FirebaseAuth.getInstance()
+                    .createUserWithEmailAndPassword(binding.etEmail.text.toString(), binding.etPassword.text.toString())
+                    .addOnCompleteListener{
+                        if (it.isSuccessful){
+                            Snackbar.make(binding.root, "Registro exitoso", Snackbar.LENGTH_LONG)
+                                .show()
+
+                            startActivity(Intent(this, LoginActivity::class.java))
+                        } else {
+                            Snackbar.make(binding.root, "Algo anda mal, intentelo de nuevo mas tarde", Snackbar.LENGTH_LONG)
+                                .show()
+                        }
+                    }
+            }
+        }
     }
 }

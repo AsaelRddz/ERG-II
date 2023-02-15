@@ -9,4 +9,8 @@
     <string name="nombre">Nombre</string>
     <string name="apellido_materno">Apellido Materno</string>
     <string name="apellido_parterno">Apellido Parterno</string>
+    <string name="register_success">Registro exitoso</string>
+    <string name="register_error">Algo anda mal, intente de nuevo mas tarde</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="login_error">Vefique de nuevo sus datos</string>
 </resources>

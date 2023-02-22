@@ -6,6 +6,7 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.erg_iiapp.databinding.ActivitySplashBinding
 import com.erg_iiapp.view.LoginActivity
+import com.google.firebase.auth.FirebaseAuth
 
 lateinit var binding: ActivitySplashBinding
 
@@ -18,8 +19,14 @@ class SplashActivity : AppCompatActivity() {
         // Schedule the display of the splash screen
         val handler = Handler()
         handler.postDelayed({
-            // Start the next activity
-            startActivity(Intent(this, LoginActivity::class.java))
+            val userActive = FirebaseAuth.getInstance().currentUser
+
+            // Si existe un usuario activo se dirige hacia el main
+            if(userActive != null){
+                startActivity(Intent(this, MainActivity::class.java))
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
             finish()
         }, 1000) // Delay in milliseconds
     }

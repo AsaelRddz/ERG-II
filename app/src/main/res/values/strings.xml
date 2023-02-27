@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ERG-IIApp</string>
+    <string name="app_name">ERG-IIA</string>
     <string name="email">Email</string>
     <string name="password">Contraseña</string>
     <string name="ingresar">Ingresar</string>
@@ -10,7 +10,19 @@
     <string name="apellido_materno">Apellido Materno</string>
     <string name="apellido_parterno">Apellido Parterno</string>
     <string name="register_success">Registro exitoso</string>
-    <string name="register_error">Algo anda mal, intente de nuevo mas tarde</string>
+    <string name="register_error">Algo anda mal, intente de nuevo más tarde</string>
     <string name="welcome">Bienvenido</string>
     <string name="login_error">Vefique de nuevo sus datos</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="Cuenta">Cuenta</string>
+    <string name="brazo">Brazo</string>
+    <string name="espalda">Espalda</string>
+    <string name="ejercicios_para_ejercitar_el_brazo">Ejercicios para ejercitar el brazo.</string>
+    <string name="ejercicios_para_ejercitar_la_espalda">Ejercicios para ejercitar la espalda.</string>
+    <string name="analisis_owas">Analisis OWAS</string>
+    <string name="change_pass">Cambiar contraseña</string>
+    <string name="cambiar">Cambiar</string>
+    <string name="change_success">Cambio exitoso</string>
+    <string name="change_failure">Hubo un problema, intente de nuevo mas tarde</string>
+    <string name="warning_pass">La contraseña debe ser mayor a 6 caracteres</string>
 </resources>

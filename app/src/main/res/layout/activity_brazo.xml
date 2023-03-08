@@ -18,21 +18,49 @@
             android:layout_marginTop="12dp"
             android:padding="20dp"
             android:text="@string/brazo"
+            android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
+            android:background="@color/bg_textview"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Posicion de los brazos"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/card1_brazo"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Codigos"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/card1_brazo"
+            app:layout_constraintTop_toTopOf="@+id/textView12" />
+
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card1_espalda"
+            android:id="@+id/card1_brazo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            app:cardElevation="5dp"
+            android:layout_marginTop="16dp"
             app:cardCornerRadius="16dp"
+            app:cardElevation="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView3">
+            app:layout_constraintTop_toBottomOf="@+id/textView12">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/espalda_derecha"
@@ -41,79 +69,70 @@
                 android:layout_margin="20dp"
                 app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:adjustViewBounds="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="Los dos brazos bajos"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/textView11"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Dos brazos bajos"
-                    android:background="@color/bg_textview"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView3"
+                    android:layout_marginEnd="16dp"
+                    android:text="Ambos brazos del trabajador estan situados bajo el nivel de los hombros"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/brazos1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView15"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"
+                    android:background="@color/blue_numbers"
+                    android:gravity="center"
+                    android:text="@string/number_1"
+                    android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:padding="6dp"
-                    android:text="Ambos brazos del trabajador estan situados bajo el nivel de los hombros"
-                    android:textColor="@color/black"
-                    app:layout_constraintEnd_toEndOf="@+id/textView5"
-                    app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:text="1"
-                    android:gravity="center"
-                    android:background="@color/bg_textview"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline"
-                    app:layout_constraintStart_toStartOf="@+id/textView5"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_begin="238dp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card2_espalda"
+            android:id="@+id/card2_brazo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            app:cardElevation="5dp"
+            android:layout_marginTop="16dp"
             app:cardCornerRadius="16dp"
+            app:cardElevation="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card1_espalda">
+            app:layout_constraintTop_toBottomOf="@+id/card1_brazo">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -121,79 +140,71 @@
                 android:layout_margin="20dp"
                 app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:adjustViewBounds="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                <TextView
+                    android:id="@+id/tw1_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="Un brazo bajo y el otro elevado"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/im1_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/tw2_2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Espalda derecha"
-                    android:background="@color/bg_textview"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/un_brazo_del_trabajador_est_situado_bajo_el_nivel_de_los_hombros_y_el_otro_o_parte_del_otro_est_situado_por_encima_del_nivel_de_los_hombros"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/im1_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tw1_2" />
+
+                <ImageView
+                    android:id="@+id/im1_2"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/brazos2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tw3_2"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/tw3_2"
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"
+                    android:background="@color/blue_numbers"
+                    android:gravity="center"
+                    android:text="@string/number_2"
+                    android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:padding="6dp"
-                    android:text="Un brazo al nivel de los hombros, el otro por encima de los hombros"
-                    android:textColor="@color/black"
-                    app:layout_constraintEnd_toEndOf="@+id/textView6"
-                    app:layout_constraintStart_toStartOf="@+id/guidelin2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:text="2"
-                    android:gravity="center"
-                    android:background="@color/bg_textview"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/guidelin2"
-                    app:layout_constraintStart_toStartOf="@+id/textView6"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guidelin2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_begin="238dp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card3_brazo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            app:cardElevation="5dp"
+            android:layout_marginTop="16dp"
             app:cardCornerRadius="16dp"
+            app:cardElevation="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card2_espalda">
+            app:layout_constraintTop_toBottomOf="@+id/card2_brazo">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -201,67 +212,68 @@
                 android:layout_margin="20dp"
                 app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:adjustViewBounds="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                <TextView
+                    android:id="@+id/tw1_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="Los dos brazos elevados"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/im1_3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tw2_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:background="@color/bg_textview"
-                    android:gravity="center"
-                    android:text="Ambos elevados"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView5"
+                    android:layout_marginEnd="16dp"
+                    android:text="Ambos brazos (o parte de los brazos) del trabajador están situados por encima del nivel de los hombros"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/im1_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tw1_3" />
+
+                <ImageView
+                    android:id="@+id/im1_3"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/brazos3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tw3_3"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/tw3_3"
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"
+                    android:background="@color/blue_numbers"
+                    android:gravity="center"
+                    android:text="@string/number_3"
+                    android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:padding="6dp"
-                    android:text="Los 2 brazos (o parte de estos) estan situados por encima de"
-                    android:textColor="@color/black"
-                    app:layout_constraintEnd_toEndOf="@+id/textView8"
-                    app:layout_constraintStart_toStartOf="@+id/guidelin3"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@color/bg_textview"
-                    android:gravity="center"
-                    android:text="3"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/guidelin3"
-                    app:layout_constraintStart_toStartOf="@+id/textView8"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guidelin3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_begin="238dp" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
         </com.google.android.material.card.MaterialCardView>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="205dp" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

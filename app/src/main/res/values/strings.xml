@@ -28,4 +28,20 @@
     <string name="change_failure">Hubo un problema, intente de nuevo mas tarde</string>
     <string name="warning_pass">La contraseña debe ser mayor a 6 caracteres</string>
     <string name="evaluacion_ergonomica_owas">Evaluacion Ergonomica OWAS</string>
+    <string name="las_dos_piernas_rectas_y_con_el_peso_equilibrado_entre_ambas">Las dos piernas rectas y con el peso equilibrado entre ambas.</string>
+    <string name="el_trabajador_permanece_sentado">El trabajador permanece sentado</string>
+    <string name="de_pie_o_en_cunclillas_con_las_dos_piernas_flexionadasa_y_el_peso_equilibrado_entre_ambas">De pie o en cunclillas con las dos piernas flexionadasa y el peso equilibrado entre ambas</string>
+    <string name="puede_considerarse_que_ocurre_para_angulos_muslo_pantorrilla_inferiores_o_iguales_a_150_angulos_mayores_seran_considerados_piernas_rectas">Puede considerarse que ocurre para angulos muslo-pantorrilla inferiores o iguales a 150°. Angulos mayores seran considerados piernas rectas</string>
+    <string name="el_trabajador_apoya_una_o_las_dos_rodillas_en_el_suelo">El trabajador apoya una o las dos rodillas en el suelo</string>
+    <string name="arrodillado">Arrodillado</string>
+    <string name="el_trabajador_camina">El trabajador camina</string>
+    <string name="andando">Andando</string>
+    <string name="number_3">3</string>
+    <string name="number_2">2</string>
+    <string name="number_1">1</string>
+    <string name="number_4">4</string>
+    <string name="number_6">6</string>
+    <string name="number_5">5</string>
+    <string name="number_7">7</string>
+    <string name="un_brazo_del_trabajador_est_situado_bajo_el_nivel_de_los_hombros_y_el_otro_o_parte_del_otro_est_situado_por_encima_del_nivel_de_los_hombros">Un brazo del trabajador está situado bajo el nivel de los hombros y el otro, o parte del otro, está situado por encima del nivel de los hombros</string>
 </resources>

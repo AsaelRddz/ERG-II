@@ -3,14 +3,13 @@ package com.erg_iiapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import com.erg_iiapp.databinding.ActivityMainBinding
 import com.erg_iiapp.view.AccountActivity
 import com.erg_iiapp.view.LoginActivity
 import com.erg_iiapp.view.ejercicios.BrazoActivity
-import com.erg_iiapp.view.ejercicios.EspaldaActivity
+import com.erg_iiapp.view.ejercicios.PiernaActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -26,8 +25,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun ejercicios() {
-        binding.cardEspalda.setOnClickListener {
-            startActivity(Intent(this, EspaldaActivity::class.java))
+        binding.cardPierna.setOnClickListener {
+            startActivity(Intent(this, PiernaActivity::class.java))
         }
 
         binding.cardBrazo.setOnClickListener {

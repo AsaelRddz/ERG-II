@@ -16,8 +16,10 @@
     <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="Cuenta">Cuenta</string>
     <string name="brazo">Brazo</string>
+    <string name="pierna">Piernas</string>
     <string name="espalda">Espalda</string>
     <string name="ejercicios_para_ejercitar_el_brazo">Ejercicios para ejercitar el brazo.</string>
+    <string name="ejercicios_para_ejercitar_el_piernas">Ejercicios para ejercitar las piernas.</string>
     <string name="ejercicios_para_ejercitar_la_espalda">Ejercicios para ejercitar la espalda.</string>
     <string name="analisis_owas">Analisis OWAS</string>
     <string name="change_pass">Cambiar contraseña</string>
@@ -25,4 +27,5 @@
     <string name="change_success">Cambio exitoso</string>
     <string name="change_failure">Hubo un problema, intente de nuevo mas tarde</string>
     <string name="warning_pass">La contraseña debe ser mayor a 6 caracteres</string>
+    <string name="evaluacion_ergonomica_owas">Evaluacion Ergonomica OWAS</string>
 </resources>

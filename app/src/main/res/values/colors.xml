@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bg_textview">#7A8E8E8E</color>
+    <color name="blue_numbers">#446e9b</color>
 </resources>

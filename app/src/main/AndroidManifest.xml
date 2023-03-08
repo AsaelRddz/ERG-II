@@ -20,7 +20,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".view.ejercicios.EspaldaActivity"
+            android:name=".view.ejercicios.PiernaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

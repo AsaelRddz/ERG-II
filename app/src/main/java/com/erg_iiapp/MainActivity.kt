@@ -7,9 +7,11 @@ import android.view.Menu
 import android.view.MenuItem
 import com.erg_iiapp.databinding.ActivityMainBinding
 import com.erg_iiapp.view.AccountActivity
+import com.erg_iiapp.view.CalculoActivity
 import com.erg_iiapp.view.LoginActivity
 import com.erg_iiapp.view.ejercicios.BrazoActivity
 import com.erg_iiapp.view.ejercicios.EspaldaActivity
+import com.erg_iiapp.view.ejercicios.PesoActivity
 import com.erg_iiapp.view.ejercicios.PiernaActivity
 import com.google.firebase.auth.FirebaseAuth
 
@@ -36,6 +38,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.cardPierna.setOnClickListener {
             startActivity(Intent(this, PiernaActivity::class.java))
+        }
+
+        binding.cardCalculo.setOnClickListener {
+            startActivity(Intent(this, CalculoActivity::class.java))
+        }
+
+        binding.cardPeso.setOnClickListener {
+            startActivity(Intent(this, PesoActivity::class.java))
         }
     }
 

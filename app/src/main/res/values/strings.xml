@@ -44,4 +44,15 @@
     <string name="number_5">5</string>
     <string name="number_7">7</string>
     <string name="un_brazo_del_trabajador_est_situado_bajo_el_nivel_de_los_hombros_y_el_otro_o_parte_del_otro_est_situado_por_encima_del_nivel_de_los_hombros">Un brazo del trabajador está situado bajo el nivel de los hombros y el otro, o parte del otro, está situado por encima del nivel de los hombros</string>
+    <string name="realiza_el_calculo_segun_los_ejercicios_y_el_peso_dado">Realiza el calculo segun los ejercicios y el peso dado.</string>
+    <string name="calcular_nivel_de_riesgo">Calcular nivel de riesgo</string>
+    <string name="peso">Peso</string>
+    <string name="codigos_correspondientes_a_peso">Codigos correspondientes a peso</string>
+    <string name="codigo_1">Codigo 1</string>
+    <string name="codigo_2">Codigo 2</string>
+    <string name="codigo_3">Codigo 3</string>
+    <string name="codigo_4">Codigo 4</string>
+    <string name="codigo_5">Codigo 5</string>
+    <string name="codigo_6">Codigo 6</string>
+    <string name="codigo_7">Codigo 7</string>
 </resources>

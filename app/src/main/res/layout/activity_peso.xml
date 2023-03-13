@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".view.ejercicios.BrazoActivity">
+    tools:context=".view.ejercicios.PesoActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,7 +18,7 @@
             android:background="@color/bg_textview"
             android:gravity="center"
             android:padding="20dp"
-            android:text="@string/brazo"
+            android:text="@string/peso"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,32 +70,22 @@
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_marginEnd="16dp"
-                    android:text="Los dos brazos bajos"
+                    android:text="Menos de 10kg"
+                    android:gravity="center_vertical"
                     android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/imageView3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:text="Ambos brazos del trabajador estan situados bajo el nivel de los hombros"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView3"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="50dp"
-                    android:layout_height="70dp"
+                    android:layout_height="50dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/brazos1"
+                    android:src="@drawable/img_peso2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textView15"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -141,32 +130,22 @@
                 <TextView
                     android:id="@+id/tw1_2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_marginEnd="16dp"
-                    android:text="Un brazo bajo y el otro elevado"
+                    android:text="Entre 10 y 20kg"
+                    android:gravity="center_vertical"
                     android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/im1_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tw2_2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:text="@string/un_brazo_del_trabajador_est_situado_bajo_el_nivel_de_los_hombros_y_el_otro_o_parte_del_otro_est_situado_por_encima_del_nivel_de_los_hombros"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/im1_2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tw1_2" />
-
                 <ImageView
                     android:id="@+id/im1_2"
                     android:layout_width="50dp"
-                    android:layout_height="70dp"
+                    android:layout_height="50dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/brazos2"
+                    android:src="@drawable/img_peso2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/tw3_2"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -212,32 +191,22 @@
                 <TextView
                     android:id="@+id/tw1_3"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center_vertical"
                     android:layout_marginEnd="16dp"
-                    android:text="Los dos brazos elevados"
+                    android:text="Mas de 20kg"
                     android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/im1_3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tw2_3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:text="Ambos brazos (o parte de los brazos) del trabajador están situados por encima del nivel de los hombros"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/im1_3"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tw1_3" />
-
                 <ImageView
                     android:id="@+id/im1_3"
                     android:layout_width="50dp"
-                    android:layout_height="70dp"
+                    android:layout_height="50dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/brazos3"
+                    android:src="@drawable/img_peso2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/tw3_3"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -273,4 +242,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.core.widget.NestedScrollView>

@@ -10,4 +10,8 @@
     <color name="bg_textview">#7A8E8E8E</color>
     <color name="card_oscura">#D6D6D6</color>
     <color name="blue_numbers">#446e9b</color>
+    <color name="resultado1">#99ff99</color>
+    <color name="resultado2">#ffff99</color>
+    <color name="resultado3">#ffcc99</color>
+    <color name="resultado4">#ff9966</color>
 </resources>

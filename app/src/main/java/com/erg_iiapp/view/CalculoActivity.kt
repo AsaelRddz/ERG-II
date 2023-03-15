@@ -23,77 +23,143 @@ class CalculoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLimpiar.setOnClickListener {
-            Limpiar()
+            limpiar()
         }
 
-        botonesInfo()
-        calculoPeso()
         calculoTotal()
+        clickPeso()
+        botonesInfo()
     }
 
-    private fun calculoPeso() {
-        binding.btnpesoCodigo1.setOnClickListener { calculoPierna(1) }
-        binding.btnpesoCodigo2.setOnClickListener { calculoPierna(2) }
-        binding.btnpesoCodigo3.setOnClickListener { calculoPierna(3) }
-    }
+    private fun clickPeso() {
+        binding.toggleButton.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                binding.cardPierna.visibility = View.VISIBLE
+                clickPierna()
 
-    private fun calculoPierna(peso: Int) {
-        binding.cardPierna.visibility = View.VISIBLE
-        contenedor.add(peso)
-
-        binding.btnpiernaCodigo1.setOnClickListener { calculoEspalda(1) }
-        binding.btnpiernaCodigo2.setOnClickListener { calculoEspalda(2) }
-        binding.btnpiernaCodigo3.setOnClickListener { calculoEspalda(3) }
-        binding.btnpiernaCodigo4.setOnClickListener { calculoEspalda(4) }
-        binding.btnpiernaCodigo5.setOnClickListener { calculoEspalda(5) }
-        binding.btnpiernaCodigo6.setOnClickListener { calculoEspalda(6) }
-        binding.btnpiernaCodigo7.setOnClickListener { calculoEspalda(7) }
-    }
-
-    private fun calculoEspalda(pierna: Int) {
-        binding.cardEspalda.visibility = View.VISIBLE
-        contenedor.add(pierna)
-
-        binding.btnespaldaCodigo1.setOnClickListener { calculoBrazo(1) }
-        binding.btnespaldaCodigo2.setOnClickListener { calculoBrazo(2) }
-        binding.btnespaldaCodigo3.setOnClickListener { calculoBrazo(3) }
-        binding.btnespaldaCodigo4.setOnClickListener { calculoBrazo(4) }
-    }
-
-    private fun calculoBrazo(brazo: Int) {
-        binding.cardBrazo.visibility = View.VISIBLE
-        contenedor.add(brazo)
-
-        binding.btnbrazoCodigo1.setOnClickListener { contenedor.add(1) }
-        binding.btnbrazoCodigo2.setOnClickListener { contenedor.add(2) }
-        binding.btnbrazoCodigo3.setOnClickListener { contenedor.add(3) }
-    }
-
-    private fun calculoTotal() {
-        binding.btnCalcular.setOnClickListener {
-            if (contenedor.size >= 4){
-                when(contenedor[0]){
-                    1 -> {
-                        Toast.makeText(this,"Hola mundo", Toast.LENGTH_SHORT).show()
+                when(checkedId) {
+                    binding.btnpesoCodigo1.id -> {
+                        contenedor.add(1)
                     }
-                    2 -> {
-                        Toast.makeText(this,"2", Toast.LENGTH_SHORT).show()
-
+                    binding.btnpesoCodigo2.id -> {
+                        contenedor.add(2)
                     }
-                    3 -> {
-                        Toast.makeText(this,"3", Toast.LENGTH_SHORT).show()
+                    binding.btnpesoCodigo3.id -> {
+                        contenedor.add(3)
                     }
-                    else -> {}
                 }
-            } else {
-                Snackbar.make(binding.root, "Faltan campos por seleccionar", Snackbar.LENGTH_SHORT).show()
             }
         }
     }
 
+    private fun clickPierna() {
+        binding.toggleButton2.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                binding.cardEspalda.visibility = View.VISIBLE
+                clickEspalda()
 
-    private fun Limpiar() {
-        contenedor = ArrayList()
+                when(checkedId) {
+                    binding.btnpiernaCodigo1.id -> {
+                        contenedor.add(1)
+                    }
+                    binding.btnpiernaCodigo2.id -> {
+                        contenedor.add(2)
+                    }
+                    binding.btnpiernaCodigo3.id -> {
+                        contenedor.add(3)
+                    }
+                    binding.btnpiernaCodigo4.id -> {
+                        contenedor.add(4)
+                    }
+                    binding.btnpiernaCodigo5.id -> {
+                        contenedor.add(5)
+                    }
+                    binding.btnpiernaCodigo6.id -> {
+                        contenedor.add(6)
+                    }
+                    binding.btnpiernaCodigo7.id -> {
+                        contenedor.add(7)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun clickEspalda() {
+        binding.toggleButton3.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                binding.cardBrazo.visibility = View.VISIBLE
+                clickBrazo()
+
+                when(checkedId) {
+                    binding.btnespaldaCodigo1.id -> {
+                        contenedor.add(1)
+                    }
+                    binding.btnespaldaCodigo2.id -> {
+                        contenedor.add(2)
+                    }
+                    binding.btnespaldaCodigo3.id -> {
+                        contenedor.add(3)
+                    }
+                    binding.btnespaldaCodigo4.id -> {
+                        contenedor.add(4)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun clickBrazo() {
+        binding.toggleButton4.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                when(checkedId) {
+                    binding.btnbrazoCodigo1.id -> {
+                        contenedor.add(1)
+                    }
+                    binding.btnbrazoCodigo2.id -> {
+                        contenedor.add(2)
+                    }
+                    binding.btnbrazoCodigo3.id -> {
+                        contenedor.add(3)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun calculoTotal() {
+        binding.btnCalcular.setOnClickListener(View.OnClickListener {
+            var resultado = 0
+            if (contenedor.size >= 4){
+                // peso, pierna, espalda, brazo
+                // 0      1       2        3
+
+                if(contenedor[1] in 1..3 && contenedor[2] == 1){ // rango 1
+                    resultado = 1
+                }
+
+                if (contenedor[1] in 4..5 && contenedor[2] == 1) { // rango 2
+                    if (contenedor[3] != 3 && contenedor[0] != 3) {
+                        resultado = 2
+                    } else {
+                        resultado = 3
+                    }
+                }
+
+                if (resultado != 0){
+                    val intent = Intent(this, ResultadoCalculoActivity::class.java)
+                    intent.putExtra("resultado", resultado)
+                    startActivity(intent)
+                }
+
+            } else {
+                Snackbar.make(binding.root, "Faltan campos por seleccionar", Snackbar.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun limpiar() {
+        contenedor.clear()
         binding.cardBrazo.visibility = View.GONE
         binding.cardEspalda.visibility = View.GONE
         binding.cardPierna.visibility = View.GONE

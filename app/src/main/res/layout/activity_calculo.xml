@@ -26,362 +26,49 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_peso"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtPierna"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            app:cardElevation="0dp"
+            android:layout_margin="24dp"
+            android:hint="Ingresa valor de pierna"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3">
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tw1"
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="32dp"
-                    android:gravity="center"
-                    android:text="Ingrese el peso"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toTopOf="@+id/scrollview_peso"
-                    app:layout_constraintEnd_toStartOf="@+id/logo_info_peso"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/logo_info_peso"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginEnd="32dp"
-                    android:src="@drawable/ic_info"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <HorizontalScrollView
-                    android:id="@+id/scrollview_peso"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/logo_info_peso"
-                    app:layout_constraintStart_toStartOf="@+id/tw1">
-
-
-                    <com.google.android.material.button.MaterialButtonToggleGroup
-                        android:id="@+id/toggle_button"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        app:layout_constraintEnd_toEndOf="@+id/logo_info_peso"
-                        app:layout_constraintStart_toStartOf="@+id/tw1"
-                        app:layout_constraintTop_toBottomOf="@+id/tw1"
-                        app:singleSelection="true">
-
-                        <Button
-                            android:id="@+id/btnpeso_codigo1"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_1" />
-
-                        <Button
-                            android:id="@+id/btnpeso_codigo2"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_2" />
-
-                        <Button
-                            android:id="@+id/btnpeso_codigo3"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_3" />
-                    </com.google.android.material.button.MaterialButtonToggleGroup>
-
-                </HorizontalScrollView>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_pierna"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtEspalda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:visibility="gone"
-            app:cardElevation="0dp"
+            android:layout_margin="24dp"
+            android:inputType="number"
+            android:hint="Ingresa valor de espalda"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_peso">
+            app:layout_constraintTop_toBottomOf="@+id/txtPierna" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tw2"
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="32dp"
-                    android:gravity="center"
-                    android:text="Ingrese pierna"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toTopOf="@+id/scrollview_pierna"
-                    app:layout_constraintEnd_toStartOf="@+id/logo_info_pierna"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/logo_info_pierna"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginEnd="32dp"
-                    android:src="@drawable/ic_info"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <HorizontalScrollView
-                    android:id="@+id/scrollview_pierna"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/logo_info_pierna"
-                    app:layout_constraintStart_toStartOf="@+id/tw2">
-
-                    <com.google.android.material.button.MaterialButtonToggleGroup
-                        android:id="@+id/toggle_button_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:singleSelection="true">
-
-                        <Button
-                            android:id="@+id/btnpierna_codigo1"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_1" />
-
-                        <Button
-                            android:id="@+id/btnpierna_codigo2"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_2" />
-
-                        <Button
-                            android:id="@+id/btnpierna_codigo3"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_3" />
-
-                        <Button
-                            android:id="@+id/btnpierna_codigo4"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_4" />
-
-                        <Button
-                            android:id="@+id/btnpierna_codigo5"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_5" />
-
-                        <Button
-                            android:id="@+id/btnpierna_codigo6"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_6" />
-
-                        <Button
-                            android:id="@+id/btnpierna_codigo7"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_7" />
-                    </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                </HorizontalScrollView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_espalda"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtBrazos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:visibility="gone"
-            app:cardElevation="0dp"
+            android:layout_margin="24dp"
+            android:inputType="number"
+            android:hint="Ingresa valor de brazos"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_pierna">
+            app:layout_constraintTop_toBottomOf="@+id/txtEspalda" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tw3"
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="32dp"
-                    android:gravity="center"
-                    android:text="Ingrese espalda"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toTopOf="@+id/scrollview_espalda"
-                    app:layout_constraintEnd_toStartOf="@+id/logo_info_espalda"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/logo_info_espalda"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginEnd="32dp"
-                    android:src="@drawable/ic_info"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <HorizontalScrollView
-                    android:id="@+id/scrollview_espalda"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/logo_info_espalda"
-                    app:layout_constraintStart_toStartOf="@+id/tw3">
-
-                    <com.google.android.material.button.MaterialButtonToggleGroup
-                        android:id="@+id/toggle_button_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:singleSelection="true">
-
-                        <Button
-                            android:id="@+id/btnespalda_codigo1"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_1" />
-
-                        <Button
-                            android:id="@+id/btnespalda_codigo2"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_2" />
-
-                        <Button
-                            android:id="@+id/btnespalda_codigo3"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_3" />
-
-                        <Button
-                            android:id="@+id/btnespalda_codigo4"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_4" />
-                    </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                </HorizontalScrollView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_brazo"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtCarga"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:visibility="gone"
-            app:cardElevation="0dp"
+            android:layout_margin="24dp"
+            android:inputType="number"
+            android:hint="Ingresa valor de Carga"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_espalda">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tw4"
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="32dp"
-                    android:gravity="center"
-                    android:text="Ingrese brazo"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toTopOf="@+id/scrollview_brazo"
-                    app:layout_constraintEnd_toStartOf="@+id/logo_info_brazo"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/logo_info_brazo"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginEnd="32dp"
-                    android:src="@drawable/ic_info"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <HorizontalScrollView
-                    android:id="@+id/scrollview_brazo"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/logo_info_brazo"
-                    app:layout_constraintStart_toStartOf="@+id/tw4">
-
-                    <com.google.android.material.button.MaterialButtonToggleGroup
-                        android:id="@+id/toggle_button_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        app:singleSelection="true">
-
-                        <Button
-                            android:id="@+id/btnbrazo_codigo1"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_1" />
-
-                        <Button
-                            android:id="@+id/btnbrazo_codigo2"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_2" />
-
-                        <Button
-                            android:id="@+id/btnbrazo_codigo3"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/codigo_3" />
-                    </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                </HorizontalScrollView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
+            app:layout_constraintTop_toBottomOf="@+id/txtBrazos" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCalcular"
@@ -393,7 +80,7 @@
             android:text="Calcular"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_brazo" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCarga" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLimpiar"

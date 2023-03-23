@@ -30,8 +30,4 @@ class ResultadoCalculoActivity : AppCompatActivity() {
 
         binding.numeroResultado.text = resultado.toString()
     }
-
-    override fun onBackPressed() {
-        startActivity(Intent(this, MainActivity::class.java))
-    }
 }

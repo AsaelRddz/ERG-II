@@ -3,6 +3,7 @@ package com.erg_iiapp.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.erg_iiapp.databinding.ActivityCalculoBinding
@@ -15,164 +16,128 @@ import com.google.android.material.snackbar.Snackbar
 class CalculoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCalculoBinding
-    private var contenedor: ArrayList<Int> = ArrayList()
+
+    val matriz = arrayOf(
+        intArrayOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1),
+        intArrayOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1),
+        intArrayOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 2, 2, 3, 1, 1, 1, 1, 1, 2),
+        intArrayOf(2, 2, 3, 2, 2, 3, 5, 2, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 3, 3),
+        intArrayOf(2, 2, 3, 2, 2, 3, 2, 3, 3, 3, 4, 4, 3, 4, 3, 3, 3, 4, 2, 3, 4),
+        intArrayOf(3, 3, 4, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 2, 3, 4),
+        intArrayOf(1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 4, 4, 4, 1, 1, 1, 1, 1, 1),
+        intArrayOf(2, 2, 3, 1, 1, 1, 1, 1, 2, 4, 4, 4, 4, 4, 4, 3, 3, 3, 1, 1, 1),
+        intArrayOf(2, 2, 3, 1, 1, 1, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1),
+        intArrayOf(2, 3, 3, 2, 2, 3, 2, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 3, 4),
+        intArrayOf(3, 3, 4, 2, 3, 4, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 3, 4),
+        intArrayOf(4, 4, 4, 2, 3, 4, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 3, 4))
+    val matriz2 = Array(3) {IntArray(3)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCalculoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnLimpiar.setOnClickListener {
-            limpiar()
-        }
-
-        calculoTotal()
-        clickPeso()
-        botonesInfo()
+        clicks()
     }
 
-    private fun clickPeso() {
-        binding.toggleButton.addOnButtonCheckedListener { group, checkedId, isChecked ->
-            if (isChecked) {
-                binding.cardPierna.visibility = View.VISIBLE
-                clickPierna()
-
-                when(checkedId) {
-                    binding.btnpesoCodigo1.id -> {
-                        contenedor.add(1)
-                    }
-                    binding.btnpesoCodigo2.id -> {
-                        contenedor.add(2)
-                    }
-                    binding.btnpesoCodigo3.id -> {
-                        contenedor.add(3)
-                    }
-                }
-            }
-        }
-    }
-
-    private fun clickPierna() {
-        binding.toggleButton2.addOnButtonCheckedListener { group, checkedId, isChecked ->
-            if (isChecked) {
-                binding.cardEspalda.visibility = View.VISIBLE
-                clickEspalda()
-
-                when(checkedId) {
-                    binding.btnpiernaCodigo1.id -> {
-                        contenedor.add(1)
-                    }
-                    binding.btnpiernaCodigo2.id -> {
-                        contenedor.add(2)
-                    }
-                    binding.btnpiernaCodigo3.id -> {
-                        contenedor.add(3)
-                    }
-                    binding.btnpiernaCodigo4.id -> {
-                        contenedor.add(4)
-                    }
-                    binding.btnpiernaCodigo5.id -> {
-                        contenedor.add(5)
-                    }
-                    binding.btnpiernaCodigo6.id -> {
-                        contenedor.add(6)
-                    }
-                    binding.btnpiernaCodigo7.id -> {
-                        contenedor.add(7)
-                    }
-                }
-            }
-        }
-    }
-
-    private fun clickEspalda() {
-        binding.toggleButton3.addOnButtonCheckedListener { group, checkedId, isChecked ->
-            if (isChecked) {
-                binding.cardBrazo.visibility = View.VISIBLE
-                clickBrazo()
-
-                when(checkedId) {
-                    binding.btnespaldaCodigo1.id -> {
-                        contenedor.add(1)
-                    }
-                    binding.btnespaldaCodigo2.id -> {
-                        contenedor.add(2)
-                    }
-                    binding.btnespaldaCodigo3.id -> {
-                        contenedor.add(3)
-                    }
-                    binding.btnespaldaCodigo4.id -> {
-                        contenedor.add(4)
-                    }
-                }
-            }
-        }
-    }
-
-    private fun clickBrazo() {
-        binding.toggleButton4.addOnButtonCheckedListener { group, checkedId, isChecked ->
-            if (isChecked) {
-                when(checkedId) {
-                    binding.btnbrazoCodigo1.id -> {
-                        contenedor.add(1)
-                    }
-                    binding.btnbrazoCodigo2.id -> {
-                        contenedor.add(2)
-                    }
-                    binding.btnbrazoCodigo3.id -> {
-                        contenedor.add(3)
-                    }
-                }
-            }
-        }
-    }
-
-    private fun calculoTotal() {
-        binding.btnCalcular.setOnClickListener(View.OnClickListener {
-            var resultado = 0
-            if (contenedor.size >= 4){
-                // peso, pierna, espalda, brazo
-                // 0      1       2        3
-
-                if(contenedor[1] in 1..3 && contenedor[2] == 1){ // rango 1
-                    resultado = 1
-                }
-
-                if (contenedor[1] in 4..5 && contenedor[2] == 1) { // rango 2
-                    if (contenedor[3] != 3 && contenedor[0] != 3) {
-                        resultado = 2
-                    } else {
-                        resultado = 3
-                    }
-                }
-
-                if (resultado != 0){
-                    val intent = Intent(this, ResultadoCalculoActivity::class.java)
-                    intent.putExtra("resultado", resultado)
-                    startActivity(intent)
-                }
-
+    private fun clicks() {
+        binding.btnCalcular.setOnClickListener {
+            if (binding.txtPierna.text.toString().isNotEmpty() && binding.txtEspalda.text.toString().isNotEmpty() &&
+                binding.txtBrazos.text.toString().isNotEmpty() && binding.txtCarga.text.toString().isNotEmpty()){
+                calcular()
             } else {
-                Snackbar.make(binding.root, "Faltan campos por seleccionar", Snackbar.LENGTH_SHORT).show()
+                Toast.makeText(this, "Verifique que ningun campo esta vacio", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
+
+        binding.btnLimpiar.setOnClickListener {
+            binding.txtPierna.setText("")
+            binding.txtEspalda.setText("")
+            binding.txtBrazos.setText("")
+            binding.txtCarga.setText("")
+        }
     }
 
-    private fun limpiar() {
-        contenedor.clear()
-        binding.cardBrazo.visibility = View.GONE
-        binding.cardEspalda.visibility = View.GONE
-        binding.cardPierna.visibility = View.GONE
+    private fun calcular() {
+        val valorPierna = Integer.parseInt(binding.txtPierna.text.toString()) - 1
+        val valorEspalda = Integer.parseInt(binding.txtEspalda.text.toString()) - 1
+        val valorBrazos = Integer.parseInt(binding.txtBrazos.text.toString()) - 1
+        val valorCarga = Integer.parseInt(binding.txtCarga.text.toString()) - 1
 
-        binding.toggleButton.clearChecked()
-        binding.toggleButton2.clearChecked()
-        binding.toggleButton3.clearChecked()
-        binding.toggleButton4.clearChecked()
-    }
-    private fun botonesInfo() {
-        binding.logoInfoPeso.setOnClickListener { startActivity(Intent(this, PesoActivity::class.java))}
-        binding.logoInfoPierna.setOnClickListener { startActivity(Intent(this, PiernaActivity::class.java))}
-        binding.logoInfoEspalda.setOnClickListener { startActivity(Intent(this, EspaldaActivity::class.java))}
-        binding.logoInfoBrazo.setOnClickListener { startActivity(Intent(this, BrazoActivity::class.java))}
+        // Matriz que empareja piernas y espalda
+        for (fila in 0..2) {
+            for (columna in 0..2) {
+                when(valorPierna){
+                    0 -> {
+                        when(valorEspalda) {
+                            0 -> matriz2[fila][columna] = matriz[(valorEspalda)+fila][(valorPierna)+columna]
+                            1 -> matriz2[fila][columna] = matriz[(valorEspalda+2)+fila][(valorPierna)+columna]                    1 -> matriz2[fila][columna] = matriz[valorEspalda+fila][(valorPierna+3)+columna]
+                            2 -> matriz2[fila][columna] = matriz[(valorEspalda+4)+fila][(valorPierna)+columna]
+                            3 -> matriz2[fila][columna] = matriz[(valorEspalda+6)+fila][(valorPierna)+columna]
+                        }
+                    }
+                    1 -> {
+                        when(valorEspalda) {
+                            0 -> matriz2[fila][columna] = matriz[(valorEspalda)+fila][(valorPierna+2)+columna]
+                            1 -> matriz2[fila][columna] = matriz[(valorEspalda+2)+fila][(valorPierna+2)+columna]                    1 -> matriz2[fila][columna] = matriz[valorEspalda+fila][(valorPierna+3)+columna]
+                            2 -> matriz2[fila][columna] = matriz[(valorEspalda+4)+fila][(valorPierna+2)+columna]
+                            3 -> matriz2[fila][columna] = matriz[(valorEspalda+6)+fila][(valorPierna+2)+columna]
+                        }
+                    }
+                    2 -> {
+                        when(valorEspalda) {
+                            0 -> matriz2[fila][columna] = matriz[(valorEspalda)+fila][(valorPierna+4)+columna]
+                            1 -> matriz2[fila][columna] = matriz[(valorEspalda+2)+fila][(valorPierna+4)+columna]                    1 -> matriz2[fila][columna] = matriz[valorEspalda+fila][(valorPierna+3)+columna]
+                            2 -> matriz2[fila][columna] = matriz[(valorEspalda+4)+fila][(valorPierna+4)+columna]
+                            3 -> matriz2[fila][columna] = matriz[(valorEspalda+6)+fila][(valorPierna+4)+columna]
+                        }
+                    }
+                    3 -> {
+                        when(valorEspalda) {
+                            0 -> matriz2[fila][columna] = matriz[(valorEspalda)+fila][(valorPierna+6)+columna]
+                            1 -> matriz2[fila][columna] = matriz[(valorEspalda+2)+fila][(valorPierna+6)+columna]                    1 -> matriz2[fila][columna] = matriz[valorEspalda+fila][(valorPierna+3)+columna]
+                            2 -> matriz2[fila][columna] = matriz[(valorEspalda+4)+fila][(valorPierna+6)+columna]
+                            3 -> matriz2[fila][columna] = matriz[(valorEspalda+6)+fila][(valorPierna+6)+columna]
+                        }
+                    }
+                    4 -> {
+                        when(valorEspalda) {
+                            0 -> matriz2[fila][columna] = matriz[(valorEspalda)+fila][(valorPierna+8)+columna]
+                            1 -> matriz2[fila][columna] = matriz[(valorEspalda+2)+fila][(valorPierna+8)+columna]                    1 -> matriz2[fila][columna] = matriz[valorEspalda+fila][(valorPierna+3)+columna]
+                            2 -> matriz2[fila][columna] = matriz[(valorEspalda+4)+fila][(valorPierna+8)+columna]
+                            3 -> matriz2[fila][columna] = matriz[(valorEspalda+6)+fila][(valorPierna+8)+columna]
+                        }
+                    }
+                    5 -> {
+                        when(valorEspalda) {
+                            0 -> matriz2[fila][columna] = matriz[(valorEspalda)+fila][(valorPierna+10)+columna]
+                            1 -> matriz2[fila][columna] = matriz[(valorEspalda+2)+fila][(valorPierna+10)+columna]                    1 -> matriz2[fila][columna] = matriz[valorEspalda+fila][(valorPierna+3)+columna]
+                            2 -> matriz2[fila][columna] = matriz[(valorEspalda+4)+fila][(valorPierna+10)+columna]
+                            3 -> matriz2[fila][columna] = matriz[(valorEspalda+6)+fila][(valorPierna+10)+columna]
+                        }
+                    }
+                    6 -> {
+                        when(valorEspalda) {
+                            0 -> matriz2[fila][columna] = matriz[(valorEspalda)+fila][(valorPierna+12)+columna]
+                            1 -> matriz2[fila][columna] = matriz[(valorEspalda+2)+fila][(valorPierna+12)+columna]                    1 -> matriz2[fila][columna] = matriz[valorEspalda+fila][(valorPierna+3)+columna]
+                            2 -> matriz2[fila][columna] = matriz[(valorEspalda+4)+fila][(valorPierna+12)+columna]
+                            3 -> matriz2[fila][columna] = matriz[(valorEspalda+6)+fila][(valorPierna+12)+columna]
+                        }
+                    }
+                }
+            }
+        }
+
+        // Matriz que empareja brazos y carga
+        for (fila in 0..2) {
+            for (columna in 0..2) {
+                if (fila == valorBrazos && columna == valorCarga){
+                    val intent = Intent(this, ResultadoCalculoActivity::class.java)
+                    intent.putExtra("resultado", matriz2[fila][columna])
+                    startActivity(intent)
+                    break
+                }
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.erg_iiapp.R
 import com.erg_iiapp.databinding.ActivityCalculoBinding
 import com.erg_iiapp.view.ejercicios.BrazoActivity
 import com.erg_iiapp.view.ejercicios.EspaldaActivity
@@ -37,32 +38,65 @@ class CalculoActivity : AppCompatActivity() {
         binding = ActivityCalculoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val resultado1 = intent.getIntExtra("OpcionPierna",0)
+        val resultado2 = intent.getIntExtra("OpcionEspalda",0)
+        val resultado3 = intent.getIntExtra("OpcionBrazo",0)
+        val resultado4 = intent.getIntExtra("OpcionCarga",0)
+
+        if (resultado1 != 0){
+            binding.btnPierna.text = resultado1.toString()
+            binding.btnPierna.isEnabled = false
+        }
+
+        if (resultado2 != 0){
+            binding.btnEspalda.text = resultado2.toString()
+            binding.btnPierna.isEnabled = false
+        }
+
+        if (resultado3 != 0){
+            binding.btnBrazos.text = resultado2.toString()
+            binding.btnPierna.isEnabled = false
+        }
+
+        if (resultado4 != 0){
+            binding.btnCarga.text = resultado2.toString()
+            binding.btnPierna.isEnabled = false
+        }
+
         clicks()
+        intents()
+    }
+
+    private fun intents() {
+        binding.btnPierna.setOnClickListener { startActivity(Intent(this, PiernaActivity::class.java)) }
+        binding.btnEspalda.setOnClickListener { startActivity(Intent(this, EspaldaActivity::class.java)) }
+        binding.btnBrazos.setOnClickListener { startActivity(Intent(this, BrazoActivity::class.java)) }
+        binding.btnCarga.setOnClickListener { startActivity(Intent(this, PesoActivity::class.java)) }
     }
 
     private fun clicks() {
         binding.btnCalcular.setOnClickListener {
-            if (binding.txtPierna.text.toString().isNotEmpty() && binding.txtEspalda.text.toString().isNotEmpty() &&
-                binding.txtBrazos.text.toString().isNotEmpty() && binding.txtCarga.text.toString().isNotEmpty()){
+            if (binding.btnPierna.text.toString() != getString(R.string.cantidad) && binding.btnEspalda.text.toString()  != getString(R.string.cantidad) &&
+                binding.btnBrazos.text.toString() != getString(R.string.cantidad) && binding.btnCarga.text.toString() != getString(R.string.cantidad)){
                 calcular()
             } else {
-                Toast.makeText(this, "Verifique que ningun campo esta vacio", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Verifique que todos los campos hayan sido llenados", Toast.LENGTH_SHORT).show()
             }
         }
 
         binding.btnLimpiar.setOnClickListener {
-            binding.txtPierna.setText("")
-            binding.txtEspalda.setText("")
-            binding.txtBrazos.setText("")
-            binding.txtCarga.setText("")
+            binding.btnPierna.setText(getString(R.string.cantidad))
+            binding.btnEspalda.setText(getString(R.string.cantidad))
+            binding.btnBrazos.setText(getString(R.string.cantidad))
+            binding.btnCarga.setText(getString(R.string.cantidad))
         }
     }
 
     private fun calcular() {
-        val valorPierna = Integer.parseInt(binding.txtPierna.text.toString()) - 1
-        val valorEspalda = Integer.parseInt(binding.txtEspalda.text.toString()) - 1
-        val valorBrazos = Integer.parseInt(binding.txtBrazos.text.toString()) - 1
-        val valorCarga = Integer.parseInt(binding.txtCarga.text.toString()) - 1
+        val valorPierna = Integer.parseInt(binding.btnPierna.text.toString()) - 1
+        val valorEspalda = Integer.parseInt(binding.btnEspalda.text.toString()) - 1
+        val valorBrazos = Integer.parseInt(binding.btnBrazos.text.toString()) - 1
+        val valorCarga = Integer.parseInt(binding.btnCarga.text.toString()) - 1
 
         // Matriz que empareja piernas y espalda
         for (fila in 0..2) {

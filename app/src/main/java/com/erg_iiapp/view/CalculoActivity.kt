@@ -1,22 +1,28 @@
 package com.erg_iiapp.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.postDelayed
+import com.erg_iiapp.MainActivity
 import com.erg_iiapp.R
 import com.erg_iiapp.databinding.ActivityCalculoBinding
 import com.erg_iiapp.view.ejercicios.BrazoActivity
 import com.erg_iiapp.view.ejercicios.EspaldaActivity
 import com.erg_iiapp.view.ejercicios.PesoActivity
 import com.erg_iiapp.view.ejercicios.PiernaActivity
-import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.*
 
 class CalculoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCalculoBinding
+    var firebaseDatabase: FirebaseDatabase? = null
+    var databaseReference: DatabaseReference? = null
 
     val matriz = arrayOf(
         intArrayOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1),
@@ -38,34 +44,86 @@ class CalculoActivity : AppCompatActivity() {
         binding = ActivityCalculoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val resultado1 = intent.getIntExtra("OpcionPierna",0)
-        val resultado2 = intent.getIntExtra("OpcionEspalda",0)
-        val resultado3 = intent.getIntExtra("OpcionBrazo",0)
-        val resultado4 = intent.getIntExtra("OpcionCarga",0)
 
-        if (resultado1 != 0){
-            binding.btnPierna.text = resultado1.toString()
-            binding.btnPierna.isEnabled = false
-        }
-
-        if (resultado2 != 0){
-            binding.btnEspalda.text = resultado2.toString()
-            binding.btnPierna.isEnabled = false
-        }
-
-        if (resultado3 != 0){
-            binding.btnBrazos.text = resultado2.toString()
-            binding.btnPierna.isEnabled = false
-        }
-
-        if (resultado4 != 0){
-            binding.btnCarga.text = resultado2.toString()
-            binding.btnPierna.isEnabled = false
-        }
-
+        inicializarFirebase()
         clicks()
         intents()
+        vistaInicial()
+        binding.progressBar.visibility = View.GONE
     }
+
+    private fun inicializarFirebase() {
+        FirebaseApp.initializeApp(this)
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseReference = firebaseDatabase?.getReference()
+    }
+
+    private fun vistaInicial() {
+        databaseReference?.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (datos in dataSnapshot.child("datosPierna").children) {
+                    val dato = datos.child("datosPierna").getValue(Int::class.java)
+                    binding.btnPierna.text = dato?.toString()
+                    binding.btnPierna.isEnabled = false
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Este método se llama si la consulta es cancelada por algún motivo
+                binding.btnPierna.setText(getString(R.string.cantidad))
+                binding.btnPierna.isEnabled = true
+            }
+        })
+
+        databaseReference?.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (datos in dataSnapshot.child("datosEspalda").children) {
+                    val dato = datos.child("datosEspalda").getValue(Int::class.java)
+                    binding.btnEspalda.text = dato.toString()
+                    binding.btnEspalda.isEnabled = false
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Este método se llama si la consulta es cancelada por algún motivo
+                binding.btnEspalda.setText(getString(R.string.cantidad))
+                binding.btnEspalda.isEnabled = true
+            }
+        })
+
+        databaseReference?.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (datos in dataSnapshot.child("datosBrazos").children) {
+                    val dato = datos.child("datosBrazos").getValue(Int::class.java)
+                    binding.btnBrazos.text = dato.toString()
+                    binding.btnBrazos.isEnabled = false
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Este método se llama si la consulta es cancelada por algún motivo
+                binding.btnBrazos.setText(getString(R.string.cantidad))
+                binding.btnBrazos.isEnabled = true
+            }
+        })
+
+        databaseReference?.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (datos in dataSnapshot.child("datosCarga").children) {
+                    val dato = datos.child("datosCarga").getValue(Int::class.java)
+                    binding.btnCarga.text = dato?.toString()
+                    binding.btnCarga.isEnabled = false
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Este método se llama si la consulta es cancelada por algún motivo
+                binding.btnPierna.setText(getString(R.string.cantidad))
+                binding.btnPierna.isEnabled = true
+            }
+        })
+    }
+
 
     private fun intents() {
         binding.btnPierna.setOnClickListener { startActivity(Intent(this, PiernaActivity::class.java)) }
@@ -85,10 +143,23 @@ class CalculoActivity : AppCompatActivity() {
         }
 
         binding.btnLimpiar.setOnClickListener {
-            binding.btnPierna.setText(getString(R.string.cantidad))
-            binding.btnEspalda.setText(getString(R.string.cantidad))
-            binding.btnBrazos.setText(getString(R.string.cantidad))
-            binding.btnCarga.setText(getString(R.string.cantidad))
+            binding.progressBar.visibility = View.VISIBLE
+
+            Handler().postDelayed({
+                databaseReference?.child("datosPierna")?.removeValue()
+                databaseReference?.child("datosEspalda")?.removeValue()
+                databaseReference?.child("datosBrazos")?.removeValue()
+                databaseReference?.child("datosCarga")?.removeValue()
+                recreate()
+            }, 1500)
+
+        }
+    }
+
+    override fun onBackPressed() {
+        if (binding.btnPierna.text.toString() == getString(R.string.cantidad) && binding.btnEspalda.text.toString()  == getString(R.string.cantidad) &&
+            binding.btnBrazos.text.toString() == getString(R.string.cantidad) && binding.btnCarga.text.toString() == getString(R.string.cantidad)){
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 

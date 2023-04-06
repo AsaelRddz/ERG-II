@@ -21,10 +21,26 @@ class ResultadoCalculoActivity : AppCompatActivity() {
         val resultado = intent.getIntExtra("resultado", 0)
 
         when(resultado){
-            1 -> binding.resultadoBg.setBackgroundColor(ContextCompat.getColor(this, R.color.resultado1))
-            2 -> binding.resultadoBg.setBackgroundColor(ContextCompat.getColor(this, R.color.resultado2))
-            3 -> binding.resultadoBg.setBackgroundColor(ContextCompat.getColor(this, R.color.resultado3))
-            4 -> binding.resultadoBg.setBackgroundColor(ContextCompat.getColor(this, R.color.resultado4))
+            1 -> {
+                binding.resultadoBg.setBackgroundColor(ContextCompat.getColor(this, R.color.resultado1))
+                binding.columna1.text = getString(R.string.postura_normal)
+                binding.columna2.text = getString(R.string.no_accion)
+            }
+            2 -> {
+                binding.resultadoBg.setBackgroundColor(ContextCompat.getColor(this, R.color.resultado2))
+                binding.columna1.text = getString(R.string.postura_probabilidad)
+                binding.columna2.text = getString(R.string.acciones_futuro)
+            }
+            3 -> {
+                binding.resultadoBg.setBackgroundColor(ContextCompat.getColor(this, R.color.resultado3))
+                binding.columna1.text = getString(R.string.postura_efectos)
+                binding.columna2.text = getString(R.string.acciones_asap)
+            }
+            4 -> {
+                binding.resultadoBg.setBackgroundColor(ContextCompat.getColor(this, R.color.resultado4))
+                binding.columna1.text = getString(R.string.carga_dañada)
+                binding.columna2.text = getString(R.string.acciones_inmediatas)
+            }
             else -> {}
         }
 

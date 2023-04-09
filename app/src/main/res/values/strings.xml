@@ -64,4 +64,5 @@
     <string name="acciones_futuro">Se requieren acciones correctivas en un futuro cercano</string>
     <string name="acciones_asap">Se requieren acciones correctivas lo antes posible</string>
     <string name="acciones_inmediatas">Se requiere tomar acciones correctivas inmediatamente</string>
+    <string name="codigo">Codigo</string>
 </resources>

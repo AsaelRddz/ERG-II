@@ -47,9 +47,7 @@ class CalculoActivity : AppCompatActivity() {
 
         inicializarFirebase()
         clicks()
-        intents()
         vistaInicial()
-        binding.progressBar.visibility = View.GONE
     }
 
     private fun inicializarFirebase() {
@@ -122,45 +120,6 @@ class CalculoActivity : AppCompatActivity() {
                 binding.btnPierna.isEnabled = true
             }
         })
-    }
-
-
-    private fun intents() {
-        binding.btnPierna.setOnClickListener { startActivity(Intent(this, PiernaActivity::class.java)) }
-        binding.btnEspalda.setOnClickListener { startActivity(Intent(this, EspaldaActivity::class.java)) }
-        binding.btnBrazos.setOnClickListener { startActivity(Intent(this, BrazoActivity::class.java)) }
-        binding.btnCarga.setOnClickListener { startActivity(Intent(this, PesoActivity::class.java)) }
-    }
-
-    private fun clicks() {
-        binding.btnCalcular.setOnClickListener {
-            if (binding.btnPierna.text.toString() != getString(R.string.cantidad) && binding.btnEspalda.text.toString()  != getString(R.string.cantidad) &&
-                binding.btnBrazos.text.toString() != getString(R.string.cantidad) && binding.btnCarga.text.toString() != getString(R.string.cantidad)){
-                calcular()
-            } else {
-                Toast.makeText(this, "Verifique que todos los campos hayan sido llenados", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        binding.btnLimpiar.setOnClickListener {
-            binding.progressBar.visibility = View.VISIBLE
-
-            Handler().postDelayed({
-                databaseReference?.child("datosPierna")?.removeValue()
-                databaseReference?.child("datosEspalda")?.removeValue()
-                databaseReference?.child("datosBrazos")?.removeValue()
-                databaseReference?.child("datosCarga")?.removeValue()
-                recreate()
-            }, 1500)
-
-        }
-    }
-
-    override fun onBackPressed() {
-        if (binding.btnPierna.text.toString() == getString(R.string.cantidad) && binding.btnEspalda.text.toString()  == getString(R.string.cantidad) &&
-            binding.btnBrazos.text.toString() == getString(R.string.cantidad) && binding.btnCarga.text.toString() == getString(R.string.cantidad)){
-            startActivity(Intent(this, MainActivity::class.java))
-        }
     }
 
     private fun calcular() {
@@ -244,5 +203,45 @@ class CalculoActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun clicks() {
+        binding.btnCalcular.setOnClickListener {
+            if (binding.btnPierna.text.toString() != getString(R.string.cantidad) && binding.btnEspalda.text.toString()  != getString(R.string.cantidad) &&
+                binding.btnBrazos.text.toString() != getString(R.string.cantidad) && binding.btnCarga.text.toString() != getString(R.string.cantidad)){
+                calcular()
+            } else {
+                Toast.makeText(this, "Verifique que todos los campos hayan sido llenados", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.btnLimpiar.setOnClickListener {
+            limpieza()
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        binding.btnPierna.setOnClickListener { startActivity(Intent(this, PiernaActivity::class.java)) }
+        binding.btnEspalda.setOnClickListener { startActivity(Intent(this, EspaldaActivity::class.java)) }
+        binding.btnBrazos.setOnClickListener { startActivity(Intent(this, BrazoActivity::class.java)) }
+        binding.btnCarga.setOnClickListener { startActivity(Intent(this, PesoActivity::class.java)) }
+    }
+
+    private fun limpieza() {
+        databaseReference?.child("datosPierna")?.removeValue()
+        databaseReference?.child("datosEspalda")?.removeValue()
+        databaseReference?.child("datosBrazos")?.removeValue()
+        databaseReference?.child("datosCarga")?.removeValue()
+    }
+
+    override fun onBackPressed() {
+        if (binding.btnPierna.text.toString() == getString(R.string.cantidad) && binding.btnEspalda.text.toString()  == getString(R.string.cantidad) &&
+            binding.btnBrazos.text.toString() == getString(R.string.cantidad) && binding.btnCarga.text.toString() == getString(R.string.cantidad)){
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+    }
+
+    override fun onDestroy() {
+        limpieza()
+        super.onDestroy()
     }
 }

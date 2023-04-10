@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/btnAcc"
-        android:title="@string/Cuenta"/>
 
     <item
-        android:id="@+id/btnLogout"
-        android:title="@string/cerrar_sesion"/>
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home"/>
+
+    <item
+        android:id="@+id/calculate"
+        android:title="@string/calcular"
+        android:icon="@drawable/ic_calculate"/>
+
+    <item
+        android:id="@+id/account"
+        android:title="@string/Cuenta"
+        android:icon="@drawable/ic_account"/>
 </menu>

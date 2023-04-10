@@ -15,6 +15,7 @@ import com.erg_iiapp.view.ejercicios.BrazoActivity
 import com.erg_iiapp.view.ejercicios.EspaldaActivity
 import com.erg_iiapp.view.ejercicios.PesoActivity
 import com.erg_iiapp.view.ejercicios.PiernaActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.*
 
@@ -48,6 +49,36 @@ class CalculoActivity : AppCompatActivity() {
         inicializarFirebase()
         clicks()
         vistaInicial()
+        menu()
+
+        binding.include.title.text = getString(R.string.calcular).uppercase()
+    }
+
+    private fun menu() {
+        //inicializamos variables
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        //Set Home selected
+        bottomNavigationView.selectedItemId = R.id.calculate
+        //Perform ItemSelectedListenerbtnHome
+        bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.home -> {
+                    limpieza()
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
+                    overridePendingTransition(20, 20)
+                }
+                R.id.calculate -> {
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.account -> {
+                    limpieza()
+                    startActivity(Intent(applicationContext, AccountActivity::class.java))
+                    overridePendingTransition(20, 20)
+                    return@OnNavigationItemSelectedListener true
+                }
+            }
+            false
+        })
     }
 
     private fun inicializarFirebase() {

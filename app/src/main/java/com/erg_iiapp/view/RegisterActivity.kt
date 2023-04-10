@@ -24,8 +24,6 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun signup() {
-        title = "Registro"
-
         binding.btnRegister.setOnClickListener {
             if(binding.etEmail.text!!.isNotEmpty() && binding.etPassword.text!!.isNotEmpty()){
                 if (binding.etPassword.text!!.length >= 6){

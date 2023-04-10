@@ -3,6 +3,7 @@ package com.erg_iiapp.view.ejercicios
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.erg_iiapp.R
 import com.erg_iiapp.databinding.ActivityEspaldaBinding
 import com.erg_iiapp.model.DatosCarga
 import com.erg_iiapp.model.DatosEspalda
@@ -24,6 +25,8 @@ class EspaldaActivity : AppCompatActivity() {
         setContentView(binding.root)
         click()
         inicializarFirebase()
+
+        binding.include.title.text = getString(R.string.espalda).uppercase()
     }
 
     private fun inicializarFirebase() {

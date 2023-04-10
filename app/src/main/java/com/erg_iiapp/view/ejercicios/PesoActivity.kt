@@ -3,6 +3,7 @@ package com.erg_iiapp.view.ejercicios
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.erg_iiapp.R
 import com.erg_iiapp.databinding.ActivityPesoBinding
 import com.erg_iiapp.model.DatosCarga
 import com.erg_iiapp.model.DatosPierna
@@ -24,6 +25,8 @@ class PesoActivity : AppCompatActivity() {
         setContentView(binding.root)
         click()
         inicializarFirebase()
+
+        binding.include.title.text = getString(R.string.peso).uppercase()
     }
 
     private fun inicializarFirebase() {

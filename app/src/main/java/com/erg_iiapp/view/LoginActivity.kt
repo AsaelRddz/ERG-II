@@ -28,8 +28,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login() {
-        title = "Login"
-        
         binding.btnLogIn.setOnClickListener {
             if(binding.etEmail.text!!.isNotEmpty() && binding.etPassword.text!!.isNotEmpty()){
                 FirebaseAuth.getInstance()

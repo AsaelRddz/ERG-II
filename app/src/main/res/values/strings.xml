@@ -65,4 +65,6 @@
     <string name="acciones_asap">Se requieren acciones correctivas lo antes posible</string>
     <string name="acciones_inmediatas">Se requiere tomar acciones correctivas inmediatamente</string>
     <string name="codigo">Codigo</string>
+    <string name="home">Home</string>
+    <string name="calcular">Calcular</string>
 </resources>

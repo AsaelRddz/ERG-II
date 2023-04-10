@@ -16,7 +16,6 @@ class UpdatePassActivity : AppCompatActivity() {
         binding = ActivityUpdatePassBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        title = getString(R.string.Cuenta)
         val user = FirebaseAuth.getInstance()
 
         binding.btnChangePass.setOnClickListener {

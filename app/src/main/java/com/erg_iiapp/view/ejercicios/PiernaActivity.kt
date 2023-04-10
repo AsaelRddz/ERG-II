@@ -3,6 +3,7 @@ package com.erg_iiapp.view.ejercicios
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.erg_iiapp.R
 import com.erg_iiapp.databinding.ActivityPiernaBinding
 import com.erg_iiapp.model.DatosPierna
 import com.erg_iiapp.view.CalculoActivity
@@ -24,6 +25,8 @@ class PiernaActivity : AppCompatActivity() {
         // Iniciar la BD con firebase
         inicializarFirebase()
         click()
+
+        binding.include.title.text = getString(R.string.pierna).uppercase()
     }
 
     private fun inicializarFirebase() {

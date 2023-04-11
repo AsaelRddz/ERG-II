@@ -257,7 +257,7 @@ class CalculoActivity : AppCompatActivity() {
         binding.btnCarga.setOnClickListener { startActivity(Intent(this, PesoActivity::class.java)) }
     }
 
-    private fun limpieza() {
+    fun limpieza() {
         databaseReference?.child("datosPierna")?.removeValue()
         databaseReference?.child("datosEspalda")?.removeValue()
         databaseReference?.child("datosBrazos")?.removeValue()

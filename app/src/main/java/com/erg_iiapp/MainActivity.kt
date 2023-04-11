@@ -13,6 +13,8 @@ import com.erg_iiapp.view.ejercicios.EspaldaActivity
 import com.erg_iiapp.view.ejercicios.PesoActivity
 import com.erg_iiapp.view.ejercicios.PiernaActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

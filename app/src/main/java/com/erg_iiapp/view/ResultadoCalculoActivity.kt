@@ -8,10 +8,15 @@ import androidx.core.content.ContextCompat
 import com.erg_iiapp.MainActivity
 import com.erg_iiapp.R
 import com.erg_iiapp.databinding.ActivityResultadoCalculoBinding
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class ResultadoCalculoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityResultadoCalculoBinding
+    var firebaseDatabase: FirebaseDatabase? = null
+    var databaseReference: DatabaseReference? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,5 +50,35 @@ class ResultadoCalculoActivity : AppCompatActivity() {
         }
 
         binding.numeroResultado.text = resultado.toString()
+        inicializarFirebase()
+        clicks()
+    }
+
+    private fun inicializarFirebase() {
+        FirebaseApp.initializeApp(this)
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseReference = firebaseDatabase?.getReference()
+    }
+
+    private fun clicks() {
+        binding.btnExit.setOnClickListener {
+            limpieza()
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+        binding.btnCalculateAgain.setOnClickListener {
+            limpieza()
+            startActivity(Intent(this, CalculoActivity::class.java))
+        }
+    }
+
+    fun limpieza() {
+        databaseReference?.child("datosPierna")?.removeValue()
+        databaseReference?.child("datosEspalda")?.removeValue()
+        databaseReference?.child("datosBrazos")?.removeValue()
+        databaseReference?.child("datosCarga")?.removeValue()
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
     }
 }

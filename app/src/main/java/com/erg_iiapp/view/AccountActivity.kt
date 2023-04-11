@@ -1,8 +1,11 @@
 package com.erg_iiapp.view
 
+import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import com.erg_iiapp.MainActivity
 import com.erg_iiapp.R
 import com.erg_iiapp.databinding.ActivityAccountBinding
@@ -19,11 +22,27 @@ class AccountActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.twEmail.text = FirebaseAuth.getInstance().currentUser?.email
+
+        menu()
+        clicks()
+    }
+
+    private fun clicks() {
         binding.changePass.setOnClickListener {
             startActivity(Intent(this, UpdatePassActivity::class.java))
         }
 
-        menu()
+        binding.btnSignout.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Cerrar sesión")
+                .setMessage("¿Está seguro que desea salir?")
+                .setPositiveButton("Sí", DialogInterface.OnClickListener { _, _ ->
+                    FirebaseAuth.getInstance().signOut()
+                    startActivity(Intent(this, LoginActivity::class.java))
+                })
+                .setNegativeButton("No") { _, _ -> }
+                .show()
+        }
     }
 
     private fun menu() {

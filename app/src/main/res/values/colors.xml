@@ -16,4 +16,5 @@
     <color name="resultado3">#ffcc99</color>
     <color name="resultado4">#ff9966</color>
     <color name="azul_bajo">#346EA8</color>
+    <color name="transparent">#00346EA8</color>
 </resources>

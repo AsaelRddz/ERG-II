@@ -113,28 +113,32 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:paddingStart="8dp"
             android:paddingTop="12dp"
+            android:paddingEnd="8dp"
             android:paddingBottom="12dp"
-            tools:text="Postura normal sin efectos dañinos en el sistema músculo-esquelético"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            tools:text="Postura normal sin efectos dañinos en el sistema músculo-esquelético" />
 
         <TextView
             android:id="@+id/columna2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:paddingStart="8dp"
             android:paddingTop="12dp"
+            android:paddingEnd="8dp"
             android:paddingBottom="12dp"
-            tools:text="No requiere acción"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+            app:layout_constraintTop_toBottomOf="@+id/textView16"
+            tools:text="No requiere acción" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"

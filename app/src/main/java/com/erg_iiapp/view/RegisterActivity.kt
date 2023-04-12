@@ -21,6 +21,13 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         signup()
+        clicks()
+    }
+
+    private fun clicks() {
+        binding.btnLogIn.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun signup() {

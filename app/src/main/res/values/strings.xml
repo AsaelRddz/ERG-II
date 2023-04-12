@@ -7,8 +7,7 @@
     <string name="bienvenido">¡Bienvenido!</string>
     <string name="registrar_nueva_cuenta">Registrar nueva cuenta</string>
     <string name="nombre">Nombre</string>
-    <string name="apellido_materno">Apellido Materno</string>
-    <string name="apellido_parterno">Apellido Parterno</string>
+    <string name="apellido">Apellido</string>
     <string name="register_success">Registro exitoso</string>
     <string name="register_error">Algo anda mal, intente de nuevo más tarde</string>
     <string name="welcome">Bienvenido</string>

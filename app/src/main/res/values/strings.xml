@@ -42,7 +42,6 @@
     <string name="number_6">6</string>
     <string name="number_5">5</string>
     <string name="number_7">7</string>
-    <string name="un_brazo_del_trabajador_est_situado_bajo_el_nivel_de_los_hombros_y_el_otro_o_parte_del_otro_est_situado_por_encima_del_nivel_de_los_hombros">Un brazo del trabajador está situado bajo el nivel de los hombros y el otro, o parte del otro, está situado por encima del nivel de los hombros</string>
     <string name="realiza_el_calculo_segun_los_ejercicios_y_el_peso_dado">Realiza el calculo segun los ejercicios y el peso dado.</string>
     <string name="calcular_nivel_de_riesgo">Calcular nivel de riesgo</string>
     <string name="peso">Peso</string>
@@ -66,4 +65,8 @@
     <string name="codigo">Codigo</string>
     <string name="home">Home</string>
     <string name="calcular">Calcular</string>
+    <string name="da_click_en_la_imagen_para_ver_mas_info">Da click en la imagen para ver mas info</string>
+    <string name="ambos_brazos_del_trabajador_estan_situados_bajo_el_nivel_de_los_hombros">Ambos brazos del trabajador estan situados bajo el nivel de los hombros</string>
+    <string name="ambos_brazos_o_parte_de_los_brazos_del_trabajador_est_n_situados_por_encima_del_nivel_de_los_hombros">Ambos brazos (o parte de los brazos) del trabajador están situados por encima del nivel de los hombros</string>
+    <string name="un_brazo_del_trabajador_est_situado_bajo_el_nivel_de_los_hombros_y_el_otro_o_parte_del_otro_est_situado_por_encima_del_nivel_de_los_hombros">Un brazo del trabajador está situado bajo el nivel de los hombros y el otro, o parte del otro, está situado por encima del nivel de los hombros</string>
 </resources>

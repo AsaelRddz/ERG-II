@@ -69,4 +69,5 @@
     <string name="ambos_brazos_del_trabajador_estan_situados_bajo_el_nivel_de_los_hombros">Ambos brazos del trabajador estan situados bajo el nivel de los hombros</string>
     <string name="ambos_brazos_o_parte_de_los_brazos_del_trabajador_est_n_situados_por_encima_del_nivel_de_los_hombros">Ambos brazos (o parte de los brazos) del trabajador están situados por encima del nivel de los hombros</string>
     <string name="un_brazo_del_trabajador_est_situado_bajo_el_nivel_de_los_hombros_y_el_otro_o_parte_del_otro_est_situado_por_encima_del_nivel_de_los_hombros">Un brazo del trabajador está situado bajo el nivel de los hombros y el otro, o parte del otro, está situado por encima del nivel de los hombros</string>
+    <string name="sentado">Sentado</string>
 </resources>

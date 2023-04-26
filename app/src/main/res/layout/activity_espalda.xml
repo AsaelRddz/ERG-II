@@ -51,7 +51,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card1_brazo"
+                android:id="@+id/card1_espalda"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -73,7 +73,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center|center_vertical"
-                        android:text="@string/ambos_brazos_del_trabajador_estan_situados_bajo_el_nivel_de_los_hombros"
+                        android:text="@string/el_eje_del_tronco_del_trabajador_est_alineado_con_el_eje_caderas_piernas"
                         android:textSize="16sp"
                         android:visibility="gone"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -85,13 +85,13 @@
                         android:layout_width="0dp"
                         android:layout_height="150dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/imgbrazo_1"
+                        android:src="@drawable/imgespalda_1"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_add_brazo1"
+                        android:id="@+id/btn_add_espalda"
                         style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card2_brazo"
+                android:id="@+id/card2_espalda"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -141,7 +141,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center|center_vertical"
-                        android:text="@string/un_brazo_del_trabajador_est_situado_bajo_el_nivel_de_los_hombros_y_el_otro_o_parte_del_otro_est_situado_por_encima_del_nivel_de_los_hombros"
+                        android:text="@string/puede_considerarse_que_ocurre_para_inclinaciones_mayores_de_20"
                         android:textSize="16sp"
                         android:visibility="gone"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -153,13 +153,13 @@
                         android:layout_width="0dp"
                         android:layout_height="150dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/imgbrazo_2"
+                        android:src="@drawable/imgespalda_2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_add_brazo2"
+                        android:id="@+id/btn_add_espalda2"
                         style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -188,17 +188,15 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card3_brazo"
+                android:id="@+id/card3_espalda"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:layout_marginBottom="1dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card1_brazo">
+                app:layout_constraintTop_toBottomOf="@+id/card1_espalda">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -211,7 +209,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center|center_vertical"
-                        android:text="@string/ambos_brazos_o_parte_de_los_brazos_del_trabajador_est_n_situados_por_encima_del_nivel_de_los_hombros"
+                        android:text="@string/existe_torsi_n_del_tronco_o_inclinaci_n_lateral_superior_a_20"
                         android:textSize="16sp"
                         android:visibility="gone"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -223,13 +221,13 @@
                         android:layout_width="0dp"
                         android:layout_height="150dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/imgbrazo_3"
+                        android:src="@drawable/imgespalda_3"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_add_brazo3"
+                        android:id="@+id/btn_add_espalda3"
                         style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -259,6 +257,73 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card4_espalda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toBottomOf="@+id/card2_espalda">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                    <TextView
+                        android:id="@+id/txtDescripcion4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|center_vertical"
+                        android:text="@string/existe_flexi_n_del_tronco_y_giro_o_inclinaci_n_de_forma_simult_nea"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/im1" />
+
+                    <ImageView
+                        android:id="@+id/im1"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/imgespalda_4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_add_espalda4"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Agregar"
+                        android:visibility="visible"
+                        app:icon="@drawable/ic_add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/im1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtDescripcion4" />
+
+                    <TextView
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/primary"
+                        android:gravity="center"
+                        android:text="@string/number_4"
+                        android:textColor="@color/white"
+                        android:textSize="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

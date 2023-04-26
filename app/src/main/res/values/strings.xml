@@ -70,4 +70,8 @@
     <string name="ambos_brazos_o_parte_de_los_brazos_del_trabajador_est_n_situados_por_encima_del_nivel_de_los_hombros">Ambos brazos (o parte de los brazos) del trabajador están situados por encima del nivel de los hombros</string>
     <string name="un_brazo_del_trabajador_est_situado_bajo_el_nivel_de_los_hombros_y_el_otro_o_parte_del_otro_est_situado_por_encima_del_nivel_de_los_hombros">Un brazo del trabajador está situado bajo el nivel de los hombros y el otro, o parte del otro, está situado por encima del nivel de los hombros</string>
     <string name="sentado">Sentado</string>
+    <string name="el_eje_del_tronco_del_trabajador_est_alineado_con_el_eje_caderas_piernas">El eje del tronco del trabajador está alineado con el eje caderas-piernas</string>
+    <string name="puede_considerarse_que_ocurre_para_inclinaciones_mayores_de_20">Puede considerarse que ocurre para inclinaciones mayores de 20°</string>
+    <string name="existe_torsi_n_del_tronco_o_inclinaci_n_lateral_superior_a_20">Existe torsión del tronco o inclinación lateral superior a 20°</string>
+    <string name="existe_flexi_n_del_tronco_y_giro_o_inclinaci_n_de_forma_simult_nea">Existe flexión del tronco y giro (o inclinación) de forma simultánea</string>
 </resources>

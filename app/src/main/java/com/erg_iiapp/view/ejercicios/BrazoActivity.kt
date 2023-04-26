@@ -62,8 +62,6 @@ class BrazoActivity : AppCompatActivity() {
                         binding.txtDescripcion3.visibility = View.VISIBLE
                     }
                 }
-
-
             }
         }
 
